@@ -1,9 +1,21 @@
-import clases
+from clases import Scrapping
 import time
 
 
 
-valores = clases.Scrappering
+coins = Scrapping('currencies')
+commodities = Scrapping('commodities')
+
+resultado_coins = coins.makeScrapping()
+resultado_comoddities = commodities.makeScrapping()
+
+coins.changeStatic('ars-mxn')
+coins.makeScrapping()
+
+#Debuggear porque no devuelve valores
+bitcoin = Scrapping('crypto', ['bitcoin'])
+print(bitcoin.makeScrapping())
+
 #usar funciones  - retorne arreglos para usar con cualquier moneda
 #Aplicar para comodities
 
@@ -11,10 +23,6 @@ valores = clases.Scrappering
 #Version 1.2 se genera la funcion con el tipo de variable a consultar
 
 
-for comoddities in valores.commodities_arr:
-  print(valores.Nueva_Version("commodities",comoddities))
-for coin in valores.coins_arr:
-  print(valores.Nueva_Version("coin",coin))
 # def scrapValor(base_url,section_url,specific_item,label,class_):
 #   URL = f'{base_url}/{section_url}/{specific_item}'
 #   scraperURL = scraper.get(URL)
